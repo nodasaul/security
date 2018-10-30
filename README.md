@@ -61,7 +61,7 @@ Time spent: **5** hours spent in total
 
   - [x] Affected source code: https://core.trac.wordpress.org/browser/branches/4.1/src/wp-includes/media.php)
   
-  4. (Required) User Enumeration
+  4. (Required) WordPress 4.2 User Enumeration
 - [x] Summary: 
 - Vulnerability types: User Enumeration
 - Tested in version: 4.2
