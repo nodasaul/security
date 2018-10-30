@@ -60,6 +60,17 @@ Time spent: **5** hours spent in total
     When the page is viewed, the injected code is executed.
 
   - [x] Affected source code: https://core.trac.wordpress.org/browser/branches/4.1/src/wp-includes/media.php)
+  
+  4. (Required) User Enumeration
+- [x] Summary: 
+- Vulnerability types: User Enumeration
+- Tested in version: 4.2
+- Fixed in version: N/A
+- [x] GIF Walkthrough:
+ <img src= 'https://github.com/nodasaul/security/blob/master/UE.gif' title='UE' alt='UE' />
+- [x] Steps to recreate:
+ - Go to the WordPress login page, first, check the input for admin with empty password,
+   then it shows the error because the password is empty.Second, when you input admin as    username, and put password randomly.It shows the password for admin is incorrect. When   you put other name (ex.user1), and random password, it shows error. 
 
 ## Assets
 
