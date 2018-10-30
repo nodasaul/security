@@ -6,23 +6,20 @@ Time spent: 5 hours spent in total
 
 ## Pentesting Report
 
-1. (Required) Vulnerability Name or ID
+1. (Required) Vulnerability XSS
   - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
+    - Vulnerability types:XSS
+    - Tested in version:4.2
     - Fixed in version: 
   - [ ] GIF Walkthrough: 
   - [ ] Steps to recreate: 
+Go to the WordPress login page, when you randomly type an username, notification will appear invalid username, when you type admin as username and given random password guessing, the notification will say "the password for username admin is incorrect", so we know that it's a valid username. In this way we can make guess on other valid usernames.
   - [ ] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
+Summary:
+Vulnerability types: User enumeration
+Tested in version: 4.2
+Fixed in version: -
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
 1. (Required) Vulnerability Name or ID
   - [ ] Summary: 
