@@ -29,7 +29,7 @@ Time spent: **5** hours spent in total
     - Tested in version: 4.2
     - Fixed in version: 4.6.1
   - [x] GIF Walkthrough:
-
+<img src= 'https://github.com/nodasaul/security/blob/master/XSS.gif' title='XSS1' alt='XSS2' />
 
 
   - [x] Steps to recreate: Create a new media post and upload an image with the following filename format:
@@ -49,7 +49,7 @@ Time spent: **5** hours spent in total
     - Fixed in version: 4.7.3
   - [x] GIF Walkthrough:
 
-
+<img src= 'https://github.com/nodasaul/security/blob/master/XSS.gif' title='XSS2' alt='XSS2' />
 
   - [x] Steps to recreate: Create a new page and place the following code in the body:
 
