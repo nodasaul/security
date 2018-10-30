@@ -11,7 +11,7 @@ Time spent: **5** hours spent in total
     - Tested in version: 4.2
     - Fixed in version: 4.3
   - [x] GIF Walkthrough:
-<'https://github.com/nodasaul/security/blob/master/XSS.gif' title='XSS' alt='XSS' />
+<img src= 'https://github.com/nodasaul/security/blob/master/XSS.gif' title='XSS' alt='XSS' />
 
   - [x] Steps to recreate: Create a new post and place the following code in the body:
 
