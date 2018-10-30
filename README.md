@@ -6,28 +6,33 @@ Time spent: 5 hours spent in total
 
 ## Pentesting Report
 
-1. (Required) Vulnerability XSS
-  - [ ] Summary: 
+1. (Required) Authenticated Stored Cross-Site Scripting
+  - [ ] Summary: A stored/persistent, Cross-Site script XSS vulnerablilty which allows remote attackers to inject arbitrary web script/HTML by abusing the way unclosed HTML elements during the processing of shortcode tags are mishandled.
     - Vulnerability types:XSS
     - Tested in version:4.2
-    - Fixed in version: 
+    - Fixed in version: 4.3
   - [ ] GIF Walkthrough: 
   - [ ] Steps to recreate: 
-Go to the WordPress login page, when you randomly type an username, notification will appear invalid username, when you type admin as username and given random password guessing, the notification will say "the password for username admin is incorrect", so we know that it's a valid username. In this way we can make guess on other valid usernames.
+   ```
+    [caption width="3" caption='<a href="' ">]</a><a href="http://onmouseover='alert(1)'">Xss Here!</a>
+    ```
+
+    When a user hovers over the text characters, the injected code is executed.
+
   - [ ] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-Summary:
-Vulnerability types: User enumeration
-Tested in version: 4.2
-Fixed in version: -
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
+2. (Required) WordPress 2.5-4.6 - Authenticated Stored Cross-Site Scripting via Image Filename
+  - [ ] Summary: This vulnerability allows remote attackers to create a specially crafted image file name that will inject arbitrary web script.  This abuses the insufficient validation of the file names of uploaded images.
+    - Vulnerability types:XSS
+    - Tested in version:4.2
+    - Fixed in version: 4.6.1
   - [ ] GIF Walkthrough: 
   - [ ] Steps to recreate: 
+   ```
+    filename<img src=a onerror=alert(10)>.png
+    ```
+
+    When the attachment page is viewed, the injected code is executed.
   - [ ] Affected source code:
     - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
 1. (Optional) Vulnerability Name or ID
@@ -66,7 +71,7 @@ Describe any challenges encountered while doing the work
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2018] [Saul Noda]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
