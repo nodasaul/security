@@ -1,71 +1,76 @@
-# Project 7 - WordPress Pentesting
-
-Time spent: 5 hours spent in total
+Time spent: **5** hours spent in total
 
 > Objective: Find, analyze, recreate, and document **five vulnerabilities** affecting an old version of WordPress
 
 ## Pentesting Report
 
-1. (Required) Authenticated Stored Cross-Site Scripting
-  - [ ] Summary: A stored/persistent, Cross-Site script XSS vulnerablilty which allows remote attackers to inject arbitrary web script/HTML by abusing the way unclosed HTML elements during the processing of shortcode tags are mishandled.
-    - Vulnerability types:XSS
-    - Tested in version:4.2
+1. (Required) WordPress <= 4.3 - Authenticated Shortcode Tags Cross-Site Scripting (XSS)
+  - [x] Summary: A stored/persistent, Cross-Site script XSS vulnerablilty which allows remote attackers to inject arbitrary web script/HTML by abusing the way unclosed HTML elements
+   during the processing of shortcode tags are mishandled.
+    - Vulnerability types: XSS
+    - Tested in version: 4.2
     - Fixed in version: 4.3
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  
-    "[caption width="3" caption='<a href="' ">]</a><a href="http://onmouseover='alert(1)'">Xss Here!</a>"
-   
+  - [x] GIF Walkthrough:
+
+
+  - [x] Steps to recreate: Create a new post and place the following code in the body:
+
+    ```
+    [caption width="3" caption='<a href="' ">]</a><a href="http://onmouseover='alert(1)'">Xss Here!</a>
+    ```
+
     When a user hovers over the text characters, the injected code is executed.
 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-2. (Required) WordPress 2.5-4.6 - Authenticated Stored Cross-Site Scripting via Image Filename
-  - [ ] Summary: This vulnerability allows remote attackers to create a specially crafted image file name that will inject arbitrary web script.  This abuses the insufficient validation of the file names of uploaded images.
-    - Vulnerability types:XSS
-    - Tested in version:4.2
-    - Fixed in version: 4.6.1
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
+  - [x] Affected source code:https://core.trac.wordpress.org/browser/branches/4.1/src/wp-includes/post.php)
 
+2. (Required) WordPress 2.5-4.6 - Authenticated Stored Cross-Site Scripting via Image Filename
+  - [x] Summary: This vulnerability allows remote attackers to create a specially crafted image file name that will inject arbitrary web script.  This abuses the insufficient validation of the file names of uploaded images.
+    - Vulnerability types: XSS
+    - Tested in version: 4.2
+    - Fixed in version: 4.6.1
+  - [x] GIF Walkthrough:
+
+
+
+  - [x] Steps to recreate: Create a new media post and upload an image with the following filename format:
+
+    ```
     filename<img src=a onerror=alert(10)>.png
+    ```
 
     When the attachment page is viewed, the injected code is executed.
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-1. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php) 
+
+  - [x] Affected source code: https://core.trac.wordpress.org/browser/branches/4.2/src/wp-admin/includes/media.php)
+
+3. (Required) WordPress  4.0-4.7.2 - Authenticated Stored Cross-Site Scripting (XSS) in YouTube URL Embeds
+  - [x] Summary: This vulnerablity allows remote attackers to inject arbitrary web script or HTML via video URL in YouTube emebeds.
+    - Vulnerability types: XSS
+    - Tested in version: 4.2
+    - Fixed in version: 4.7.3
+  - [x] GIF Walkthrough:
+
+
+
+  - [x] Steps to recreate: Create a new page and place the following code in the body:
+
+    ```
+    [embed src='https://youtube.com/embed/12345\x3csvg onload=alert(1)\x3e'][/embed]
+    ```
+
+    When the page is viewed, the injected code is executed.
+
+  - [x] Affected source code: https://core.trac.wordpress.org/browser/branches/4.1/src/wp-includes/media.php)
 
 ## Assets
 
-List any additional assets, such as scripts or files
+No additional assets, such as scripts or files, were used.
 
 ## Resources
 
 - [WordPress Source Browser](https://core.trac.wordpress.org/browser/)
 - [WordPress Developer Reference](https://developer.wordpress.org/reference/)
 
-GIFs created with [LiceCap](http://www.cockos.com/licecap/).
-
 ## Notes
-
-Describe any challenges encountered while doing the work
 
 ## License
 
